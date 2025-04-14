@@ -17,13 +17,13 @@ def get_moeda(nome: str):
     valor = consultar_api_externa(nome)
     if valor:
         valor_float = valor
-        cache.set(nome, valor_float, ex=3600)
+        cache.set(nome, valor_float, ex=60)
         return {"moeda": nome, "valor em BRL": valor_float, "fonte": "api externa"}
     
     valor = get_currency_from_db(nome)
     if valor:
         valor_float = float(valor)  # Converte para float
-        cache.set(nome, valor_float, ex=3600)
+        cache.set(nome, valor_float, ex=60)
         return {"moeda": nome, "valor em BRL": valor_float, "fonte": "mysql"}
 
     
