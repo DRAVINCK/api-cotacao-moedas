@@ -59,6 +59,16 @@ cd api-cotacao-moedas
 ```bash
 docker-compose up --build
 ```
+
+### ⚠️ Atenção
+
+Não se esqueça de atualizar os arquivos `db.py` e `docker-compose.yml` com as credenciais corretas do banco de dados:
+
+- No `db.py`, altere as variáveis `USER_DB` e `PASSWORD_DB` conforme suas configurações.
+- No `docker-compose.yml`, ajuste as variáveis `MYSQL_ROOT_PASSWORD`, `MYSQL_PASSWORD` e `MYSQL_DATABASE` conforme necessário.
+
+Essas credenciais devem estar sincronizadas entre os arquivos para que a conexão com o banco funcione corretamente.
+
 ### Acesse os endpoints:
 
 #### 🔍 Exemplo de consulta:
