@@ -53,5 +53,37 @@ Este projeto está dividido em dois microserviços:
 ```bash
 git clone https://github.com/seuusuario/api-cotacao-moedas.git
 cd api-cotacao-moedas
+```
+2. Suba os containers com:
 
+```bash
+docker-compose up --build
+```
+### Acesse os endpoints:
+
+#### 🔍 Exemplo de consulta:
+
+- `URL` [http://localhost:8000/cotacao/EUR](http://localhost:8000/cotacao/EUR)
+
+#### 🧪 Exemplo de Resposta
+
+```json
+{
+  "moeda": "EUR",
+  "valor em BRL": 6.65779,
+  "fonte": "api externa"
+}
+```
+
+## 📋 Notas
+
+- O código da moeda deve ser passado no padrão **ISO** (ex: `USD`, `EUR`, `BTC`).
+- O **Redis** armazena os dados por 1 hora (`ex=3600`).
+- O valor retornado é sempre em relação ao **Real Brasileiro (BRL)**.
+- O banco de dados é iniciado com base no arquivo **`init.sql`**.
+
+
+### 👨‍💻 Autor
+
+Desenvolvido por [Dravinck](https://github.com/seuusuario)
 
