@@ -88,7 +88,7 @@ Essas credenciais devem estar sincronizadas entre os arquivos para que a conexã
 ## 📋 Notas
 
 - O código da moeda deve ser passado no padrão **ISO** (ex: `USD`, `EUR`, `BTC`).
-- O **Redis** armazena os dados por 1 hora (`ex=3600`).
+- O **Redis** armazena os dados por 1 hora (`ex=60`).
 - O valor retornado é sempre em relação ao **Real Brasileiro (BRL)**.
 - O banco de dados é iniciado com base no arquivo **`init.sql`**.
 
