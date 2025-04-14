@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS cotacoes;
+USE cotacoes;
+
+CREATE TABLE IF NOT EXISTS moedas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(10) NOT NULL UNIQUE,
+    valor DECIMAL(10, 4) NOT NULL
+);
+
+INSERT INTO moedas (nome, valor) VALUES
+('USD', 5.20),
+('EUR', 5.60),
+('JPY', 0.037),
+('GBP', 6.10)
+ON DUPLICATE KEY UPDATE valor = VALUES(valor);

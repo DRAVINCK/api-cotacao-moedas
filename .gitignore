@@ -1,0 +1,3 @@
+# Arquivos sensíveis
+senhas.py
+*.secret
