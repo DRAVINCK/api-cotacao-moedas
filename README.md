@@ -36,7 +36,7 @@ Este projeto está dividido em dois microserviços:
    - Busca no **Redis** (cache);
    - Se não encontrar, tenta o **MySQL**;
    - Se ainda assim não encontrar, chama a **AwesomeAPI**;
-   - O valor obtido é cacheado no Redis por **1 hora**.
+   - O valor obtido é cacheado no Redis por **1 minuto**.
 
 ---
 
