@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from api_Moeda.db import get_currency_from_db
-from api_Moeda.apiexterna import consultar_api_externa
+from db import get_currency_from_db
+from apiexterna import consultar_api_externa
 import redis
 
 app = FastAPI()
@@ -22,7 +22,7 @@ def get_moeda(nome: str):
     
     valor = get_currency_from_db(nome)
     if valor:
-        valor_float = float(valor)  # Converte para float
+        valor_float = float(valor)  
         cache.set(nome, valor_float, ex=60)
         return {"moeda": nome, "valor em BRL": valor_float, "fonte": "mysql"}
 
@@ -30,3 +30,7 @@ def get_moeda(nome: str):
 
     
     raise HTTPException(status_code=404, detail="Moeda não encontrada")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8001)

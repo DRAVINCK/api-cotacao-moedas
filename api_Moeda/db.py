@@ -1,15 +1,18 @@
-
+import os
+from dotenv import load_dotenv
 import mysql.connector
 from mysql.connector import Error
-from senhas import PASSWORD_DB, USER_DB
+
+# Carrega as variáveis do .env
+load_dotenv()
 
 def get_currency_from_db(nome: str):
     try:
         conn = mysql.connector.connect(
-            host="mysql",
-            user=USER_DB,
-            password=PASSWORD_DB,
-            database="cotacoes"
+            host= "localhost",
+            user="root",
+            password="root",
+            database="cotacaoes"
         )
         cursor = conn.cursor()
         cursor.execute("SELECT valor FROM moedas WHERE nome = %s", (nome,))
